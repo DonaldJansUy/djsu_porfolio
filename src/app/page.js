@@ -1,7 +1,7 @@
 'use client'
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Linkedin, FileText, BarChart2, Briefcase, Target } from 'lucide-react';
+import { Mail, Linkedin, FileText, BarChart2, Briefcase, Target, BarChart, Code, Server, Layers, Layers2, Layers3 } from 'lucide-react';
 import Link from 'next/link';
 
 const Page = () => {
@@ -10,14 +10,14 @@ const Page = () => {
       <div className="w-full max-w-6xl bg-slate-800/70 backdrop-blur-lg rounded-2xl shadow-xl p-8 grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Profile Section */}
         <div className="flex flex-col items-center justify-center">
-        <motion.img
-              src="/images/main.png"
-              alt="Profile Picture"
-              className="w-32 h-32 rounded-full mb-4 object-cover"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-            />
+          <motion.img
+            src="/images/main.png"
+            alt="Profile Picture"
+            className="w-32 h-32 rounded-full mb-4 object-cover"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+          />
           <h1 className="text-2xl font-bold text-white">Donald Jans Uy</h1>
           <h2 className="text-lg text-blue-400">Business and System Analyst</h2>
           <h3 className="text-sm text-blue-300 mb-4">Full Stack Developer</h3>
@@ -47,12 +47,40 @@ const Page = () => {
               <FileText size={20} />
             </motion.a>
           </div>
+          <div className="flex gap-4 mt-2 w-full">
+            <Link href="/previousproject" className="flex-1">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-3 text-center hover:bg-blue-500/20 w-full"
+              >
+                <h3 className="text-blue-300 flex items-center justify-center gap-2 text-sm">
+                  View Projects
+                  <Layers3 className="w-4 h-4" />
+                </h3>
+              </motion.div>
+            </Link>
+
+            <Link href="/techstack" className="flex-1">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-3 text-center hover:bg-blue-500/20 w-full"
+              >
+                <h3 className="text-blue-300 flex items-center justify-center gap-2 text-sm">
+                  Tech Stack 
+                  <Server className="w-4 h-4" />
+                </h3>
+              </motion.div>
+            </Link>
+          </div>
+          {/* Rest of the code remains the same */}
         </div>
 
         {/* Tagline Section */}
         <div className="col-span-2 flex flex-col items-center justify-center text-center md:text-left">
           <p className="text-gray-300 italic text-xl mb-6">
-            Bridging business needs and technical solutions across enterprise landscapes.
+          Bridging the crucial gap between business needs and technical solutions, I bring a unique perspective forged through enterprise experience at Deloitte and Accenture.
+          My background combines strategic business analysis with strong technical capabilities developed through full-stack development training at SAIT. 
+          I specialize in delivering comprehensive solutions that seamlessly align stakeholder goals with innovative technology implementations.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -85,32 +113,6 @@ const Page = () => {
                 Streamlining operations for maximum efficiency
               </p>
             </div>
-          </div>
-
-          <div className="flex gap-4 mt-6">
-            <Link href="/previousproject">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 text-center hover:bg-blue-500/20"
-              >
-                <h3 className="text-blue-300 flex items-center justify-center gap-2">
-                  View Projects
-                  <Briefcase className="w-4 h-4" />
-                </h3>
-              </motion.div>
-            </Link>
-
-            <Link href="/techstack">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-4 text-center hover:bg-blue-500/20"
-              >
-                <h3 className="text-blue-300 flex items-center justify-center gap-2">
-                  Technical Expertise
-                  <BarChart2 className="w-4 h-4" />
-                </h3>
-              </motion.div>
-            </Link>
           </div>
         </div>
       </div>
