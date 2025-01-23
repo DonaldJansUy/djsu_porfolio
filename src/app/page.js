@@ -134,16 +134,15 @@ const Page = () => {
           className="col-span-2 flex flex-col items-center justify-center text-center md:text-left"
         >
           <motion.p 
-            className="text-gray-300 text-xl mb-6 leading-relaxed text-justify"
+            className="text-gray-300 text-xl mb-4 leading-relaxed text-justify"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
             Bridging the crucial gap between business needs and technical solutions, I bring a unique perspective forged through enterprise experience at Deloitte and Accenture.
             My background combines strategic business analysis with strong technical capabilities developed through full-stack development training at SAIT. 
-            I specialize in delivering comprehensive solutions that seamlessly align stakeholder goals with innovative technology implementations.
+            Transforming complexity into technology-driven solutions that fuel business growth and success.
           </motion.p>
-
           <motion.div 
             variants={containerVariants}
             className="grid grid-cols-1 md:grid-cols-3 gap-4"

@@ -129,7 +129,7 @@ const TechStack = () => {
               x: i % 2 === 0 ? ['100%', '-100%'] : ['-100%', '100%']
             }}
             transition={{
-              duration: 15 + i * 2,
+              duration: 3 + i * 2,
               repeat: Infinity,
               ease: "linear"
             }}
@@ -239,7 +239,7 @@ const TechStack = () => {
                     <div className="relative">
                       <motion.div
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                        transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
                         className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 rounded-full"
                       />
                       <div className="text-indigo-600 dark:text-indigo-400">
