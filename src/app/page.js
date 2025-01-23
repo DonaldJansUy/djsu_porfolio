@@ -101,7 +101,7 @@ const Page = () => {
 
           <div className="flex gap-4 mt-2 w-full">
             {[
-              { href: "/previousproject", text: "View Projects", Icon: Layers3 },
+              { href: "/previousproject", text: "View Project", Icon: Layers3 },
               { href: "/techstack", text: "Tech Stack", Icon: Server }
             ].map(({ href, text, Icon }) => (
               <Link key={href} href={href} className="flex-1">

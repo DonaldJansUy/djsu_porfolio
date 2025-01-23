@@ -97,14 +97,16 @@ const PreviousProjectPage = () => {
     {
       title: "SocialGrdn - Capstone Project",
       description: "A platform connecting garden space owners with individuals seeking to grow their own food - think Airbnb for gardens.",
-      role: "Full Stack Developer & Solution Architect",
+      role: "Role : Business Analyst, Backend Solution Architect, and Full Stack Developer",
       technologies: ["Next.js", "React", "Node.js", "PostgreSQL", "Tailwind CSS", "Google Maps API", "Firebase","MySQL Server", "MySQL Workbench","Stripe", "PWA"],
       keyFeatures: [
-        "Interactive map interface for discovering available garden spaces",
-        "Secure user authentication and profile management",
-        "Real-time messaging between hosts and gardeners",
-        "Booking and payment processing system",
-        "Review and rating system"
+        "Interactive Map Interface: Easily discover available garden spaces through an engaging and user-friendly map interface.",
+        "Secure User Authentication: Robust security measures ensure safe user login and profile management.",
+        "Smart Address Handling: User profiles feature auto-complete and auto-population for seamless address management.",
+        "Flexible User Roles: Users can effortlessly switch between roles as renters or landowners.",
+        "Comprehensive Property Management: Add, delete, and edit property listings with intuitive controls.",
+        "Moderator Tools: Access advanced features like downloadable reports and the ability to block users.",
+        "Seamless Booking & Payment: Integrated system for hassle-free booking and secure payment processing."
       ],
       challenges: "Implementing a reliable geolocation-based search system and ensuring secure transactions between users while maintaining a seamless user experience.",
       videoId: "67cCPad7O8w",
@@ -139,7 +141,7 @@ const PreviousProjectPage = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl font-bold text-white mt-8 mb-4"
         >
-          Previous Projects
+          Previous Project
         </motion.h1>
       </div>
 
