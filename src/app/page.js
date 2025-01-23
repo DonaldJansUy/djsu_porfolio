@@ -4,21 +4,28 @@ import { motion } from 'framer-motion';
 import { Mail, Linkedin, FileText, BarChart2, Briefcase, Target, Code, Server, Layers3 } from 'lucide-react';
 import Link from 'next/link';
 
+
 const AnimatedBackground = () => (
   <motion.div 
     className="fixed inset-0 z-0"
-    initial={{ backgroundPosition: '0% 50%' }}
     animate={{ 
-      backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+      backgroundPosition: ['100% 50%', '0% 50%'],
+      backgroundImage: [
+        'linear-gradient(45deg, #0f172a, #1e2a3d, #2c3e50, #2c3e50, #c0c0c0, #344955)',
+        'linear-gradient(45deg, #0f172a, #1e2a3d, #2c3e50, #c0c0c0, #344955, #0f172a)',
+        'linear-gradient(45deg, #1e2a3d, #2c3e50, #c0c0c0, #344955, #0f172a, #1e2a3d)',
+        'linear-gradient(45deg, #2c3e50, #c0c0c0, #344955, #0f172a, #1e2a3d, #2c3e50)'
+      ],
       transition: {
-        duration: 6,
+        duration: 5,
         repeat: Infinity,
-        ease: "linear"
+        repeatType: "reverse",
+        ease: "easeInOut"
       }
     }}
     style={{
-      background: 'linear-gradient(45deg, #1e293b, #0f172a, #334155, #1e293b)',
-      backgroundSize: '400% 400%',
+      backgroundSize: '100% 100%',
+      backgroundPosition: '0% 50%',
       filter: 'brightness(0.9) contrast(1.1)'
     }}
   />
@@ -35,7 +42,7 @@ const Page = () => {
       }
     }
   };
-
+  
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: { 
@@ -46,6 +53,7 @@ const Page = () => {
       }
     }
   };
+  
 
   return (
     <div className="relative min-h-screen flex items-center justify-center p-6">
@@ -74,11 +82,11 @@ const Page = () => {
               damping: 20
             }}
           />
-          <h1 className="text-2xl font-bold text-white tracking-wider">Donald Jans Uy</h1>
-          <h2 className="text-lg text-blue-400 mb-1">Business and System Analyst</h2>
-          <h2 className="text-lg text-blue-400 mb-1">Full Stack Developer</h2>
+          <h1 className="text-4xl font-bold text-white tracking-wider">Donald Jans Uy</h1>
+          <h2 className="text-2xl text-blue-400 mt-1 mb-1">Business and System Analyst</h2>
+          <h2 className="text-2xl text-blue-400 mt-1 mb-1">Full Stack Developer</h2>
 
-          <div className="flex gap-3 mb-4">
+          <div className="flex gap-3 mt-2 mb-2">
             {['mailto:donaldjans26@gmail.com', 'https://linkedin.com/in/djansuy', '/images/Donald_Jans_Uy_Resume.pdf'].map((href, index) => {
               const icons = [Mail, Linkedin, FileText];
               const Icon = icons[index];
@@ -126,7 +134,7 @@ const Page = () => {
           className="col-span-2 flex flex-col items-center justify-center text-center md:text-left"
         >
           <motion.p 
-            className="text-gray-300 italic text-xl mb-6 leading-relaxed"
+            className="text-gray-300 text-xl mb-6 leading-relaxed text-justify"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
@@ -169,7 +177,7 @@ const Page = () => {
                   <Icon className={`w-6 h-6 ${iconColor}`} />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-1">{title}</h3>
-                <p className="text-gray-400 text-sm">{description}</p>
+                <p className="text-gray-200 text-sm">{description}</p>
               </motion.div>
             ))}
           </motion.div>
