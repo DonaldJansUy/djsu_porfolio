@@ -82,7 +82,7 @@ const Page = () => {
               >
                 <div className="bg-slate-900 rounded-xl px-6 py-8 text-center">
                   <h3 className="text-2xl font-bold text-blue-400 flex items-center justify-center gap-3">
-                    Previous Projects
+                    Previous Project
                     <ArrowRight className="w-5 h-5" />
                   </h3>
                 </div>
