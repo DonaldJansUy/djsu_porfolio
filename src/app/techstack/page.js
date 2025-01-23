@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Database, 
@@ -13,7 +13,7 @@ import {
   Zap,
   ArrowRight,
   ShieldCheck,
-  PenTool  ,
+  PenTool,
   Network
 } from 'lucide-react';
 import Link from 'next/link';
@@ -99,6 +99,21 @@ const TechStack = () => {
   };
 
   const IntegrationBackground = () => {
+    const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+
+    useEffect(() => {
+      const updateWindowSize = () => {
+        setWindowSize({ 
+          width: window.innerWidth, 
+          height: window.innerHeight 
+        });
+      };
+
+      updateWindowSize();
+      window.addEventListener('resize', updateWindowSize);
+      return () => window.removeEventListener('resize', updateWindowSize);
+    }, []);
+
     return (
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
         {[...Array(8)].map((_, i) => (
@@ -126,12 +141,12 @@ const TechStack = () => {
             key={`node-${i}`}
             className="absolute"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: windowSize.width ? Math.random() * windowSize.width : 0,
+              y: windowSize.height ? Math.random() * windowSize.height : 0,
             }}
             animate={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: windowSize.width ? Math.random() * windowSize.width : 0,
+              y: windowSize.height ? Math.random() * windowSize.height : 0,
             }}
             transition={{
               duration: 20,
